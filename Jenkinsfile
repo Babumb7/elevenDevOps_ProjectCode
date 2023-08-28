@@ -1,8 +1,8 @@
 pipeline {
     // add your slave label name
-    agent { label 'my_slave1'}
+    agent { label 'slave1'}
     tools{
-        maven 'maven3.8.6'
+        maven 'maven3.8.4'
     }
     stages {
         stage ('Checkout SCM') {
@@ -23,7 +23,7 @@ pipeline {
 
             steps {
                // update your tomcat server ip accordingly in below command
-               sh "scp target/maven-web-application.war  ec2-user@34.224.26.69:/opt/tomcat9/webapps/"
+               sh "scp target/maven-web-application.war  ec2-user@54.242.212.92:/opt/tomcat9/webapps/"
                     
             }
         }
